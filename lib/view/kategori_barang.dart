@@ -34,19 +34,20 @@ class _KategoriBarangState extends State<KategoriBarang> {
         title: const Text('Kategori Barang'),
       ),
       body: SafeArea(
-        child: ListView.builder(
-          itemCount: listKategoriBarang.length,
-          itemBuilder: (context, index) {
-            return Card(
-              child: ListTile(
-                title: Text(listKategoriBarang[index].nama),
-                trailing:
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.edit)),
+          child: ListView.builder(
+        itemCount: listKategoriBarang.length,
+        itemBuilder: (context, index) {
+          return Card(
+            child: ListTile(
+              title: Text(listKategoriBarang[index].nama),
+              trailing: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.edit),
               ),
-            );
-          },
-        ),
-      ),
+            ),
+          );
+        },
+      )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(

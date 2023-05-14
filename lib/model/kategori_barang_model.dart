@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-//klik kanan trus pilih "generate data class"
 class KategoriBarangModel {
   final String nama;
   KategoriBarangModel({
@@ -17,14 +16,13 @@ class KategoriBarangModel {
 
   Map<String, dynamic> toMap() {
     return {
-      //sesuaikan dengan nama column yg ada di database
       'nama_kategori_barang': nama,
     };
   }
 
   factory KategoriBarangModel.fromMap(Map<String, dynamic> map) {
     return KategoriBarangModel(
-      nama: map['nama'] ?? '',
+      nama: map['nama_kategori_barang'] ?? '',
     );
   }
 

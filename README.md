@@ -1,16 +1,16 @@
-# flutter_api
+# exercise_002
 
-A new Flutter project.
+# Bukti SS Running Aplikasi
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 1. Kategori Barang
+![Alt text](screenshot/kategori_barang.png)
+## 2. Add Kategori Barang
+![Alt text](screenshot/add_kategori_barang.png)
+## 3. Bukti Add Kategori Baranga Berhasil
+![Alt text](screenshot/bukti_add_berhasil.png)
+## 4. Update Kategori Barang
+![Alt text](screenshot/update_kategori_barang.png)
+## 5. Bukti Update Kategori Barang Berhasil
+![Alt text](screenshot/bukti_update_berhasil.png)
+## 6. Delete Kategori Barang
+![Alt text](screenshot/delete_berhasil.png)

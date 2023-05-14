@@ -13,12 +13,18 @@ class KategoriBarang extends StatefulWidget {
 class _KategoriBarangState extends State<KategoriBarang> {
   final kategoriBarangController = KategoriBarangController();
   List<KategoriBarangModel> listKategoriBarang = [];
+  String? nama;
 
   @override
   void initState() {
     super.initState();
     getKategoriBarang();
   }
+
+  // void deleteKategoriBarang() async {
+  //   KategoriBarangModel kategoriBarang = KategoriBarangModel(nama: nama!);
+  //   await kategoriBarangController.deleteKategoriBarang(kategoriBarang);
+  // }
 
   void getKategoriBarang() async {
     final kategoriBarang = await kategoriBarangController.getKategoriBarang();
@@ -40,9 +46,19 @@ class _KategoriBarangState extends State<KategoriBarang> {
           return Card(
             child: ListTile(
               title: Text(listKategoriBarang[index].nama),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.edit),
+              trailing: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.edit),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      //deleteKategoriBarang();
+                    },
+                    icon: const Icon(Icons.delete),
+                  )
+                ],
               ),
             ),
           );

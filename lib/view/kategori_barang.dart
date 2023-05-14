@@ -52,7 +52,7 @@ class _KategoriBarangState extends State<KategoriBarang> {
                 children: <Widget>[
                   IconButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => UpdateKategoriBarang(
@@ -84,7 +84,7 @@ class _KategoriBarangState extends State<KategoriBarang> {
       )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
+          Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                   builder: (context) => const AddKategoriBarang()));

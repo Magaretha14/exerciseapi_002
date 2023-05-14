@@ -15,7 +15,6 @@ class _KategoriBarangState extends State<KategoriBarang> {
   final kategoriBarangController = KategoriBarangController();
   List<KategoriBarangModel> listKategoriBarang = [];
   String? nama;
-  int? index;
 
   @override
   void initState() {
@@ -30,12 +29,9 @@ class _KategoriBarangState extends State<KategoriBarang> {
     });
   }
 
-  void deleteKategoriBarang() async {
-    final kategoriBarang = await kategoriBarangController
-        .deleteKategoriBarang(index as KategoriBarangModel);
-    setState(() {
-      listKategoriBarang = kategoriBarang;
-    });
+  void deleteKategoriBarang(int id) async {
+    //KategoriBarangModel kategoriBarang = KategoriBarangModel(nama: nama!);
+    await kategoriBarangController.deleteKategoriBarang(id);
   }
 
   @override
@@ -66,7 +62,10 @@ class _KategoriBarangState extends State<KategoriBarang> {
                   ),
                   IconButton(
                       onPressed: () {
-                        deleteKategoriBarang();
+                        deleteKategoriBarang(listKategoriBarang[index].id);
+                        setState(() {
+                          listKategoriBarang.removeAt(index);
+                        });
                       },
                       icon: const Icon(Icons.delete))
                 ],

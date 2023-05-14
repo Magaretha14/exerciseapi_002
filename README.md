@@ -6,7 +6,7 @@
 ![Alt text](screenshot/kategori_barang.png)
 ## 2. Add Kategori Barang
 ![Alt text](screenshot/add_kategori_barang.png)
-## 3. Bukti Add Kategori Baranga Berhasil
+## 3. Bukti Add Kategori Barang Berhasil
 ![Alt text](screenshot/bukti_add_berhasil.png)
 ## 4. Update Kategori Barang
 ![Alt text](screenshot/update_kategori_barang.png)

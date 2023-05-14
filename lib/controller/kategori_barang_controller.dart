@@ -35,7 +35,10 @@ class KategoriBarangController {
   }
 
   Future deleteKategoriBarang(KategoriBarangModel kategoriBarang) async {
-    var result = await http.delete(Uri.parse("${apiUrl}barang/deleteKB/{id}"));
+    var result =
+        await http.delete(Uri.parse("${apiUrl}barang/deleteKB/{id}"), body: {
+      "id_kategori_barang": kategoriBarang.index,
+    });
     if (result.statusCode == 200) {
       return jsonDecode(result.body);
     } else {

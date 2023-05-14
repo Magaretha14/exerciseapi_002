@@ -15,6 +15,7 @@ class _KategoriBarangState extends State<KategoriBarang> {
   final kategoriBarangController = KategoriBarangController();
   List<KategoriBarangModel> listKategoriBarang = [];
   String? nama;
+  int? index;
 
   @override
   void initState() {
@@ -30,8 +31,11 @@ class _KategoriBarangState extends State<KategoriBarang> {
   }
 
   void deleteKategoriBarang() async {
-    KategoriBarangModel kategoriBarang = KategoriBarangModel(nama: nama!);
-    await kategoriBarangController.deleteKategoriBarang(kategoriBarang);
+    final kategoriBarang = await kategoriBarangController
+        .deleteKategoriBarang(index as KategoriBarangModel);
+    setState(() {
+      listKategoriBarang = kategoriBarang;
+    });
   }
 
   @override

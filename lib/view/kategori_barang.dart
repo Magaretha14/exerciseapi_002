@@ -17,6 +17,7 @@ class _KategoriBarangState extends State<KategoriBarang> {
   @override
   void initState() {
     super.initState();
+    getKategoriBarang();
   }
 
   void getKategoriBarang() async {

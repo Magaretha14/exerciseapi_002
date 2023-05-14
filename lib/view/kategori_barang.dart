@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_api/controller/kategori_barang_controller.dart';
 import 'package:flutter_api/model/kategori_barang_model.dart';
 import 'package:flutter_api/view/add_kategori_barang.dart';
+import 'package:flutter_api/view/update_kategori_barang.dart';
 
 class KategoriBarang extends StatefulWidget {
   const KategoriBarang({super.key});
@@ -21,16 +22,16 @@ class _KategoriBarangState extends State<KategoriBarang> {
     getKategoriBarang();
   }
 
-  // void deleteKategoriBarang() async {
-  //   KategoriBarangModel kategoriBarang = KategoriBarangModel(nama: nama!);
-  //   await kategoriBarangController.deleteKategoriBarang(kategoriBarang);
-  // }
-
   void getKategoriBarang() async {
     final kategoriBarang = await kategoriBarangController.getKategoriBarang();
     setState(() {
       listKategoriBarang = kategoriBarang;
     });
+  }
+
+  void deleteKategoriBarang() async {
+    KategoriBarangModel kategoriBarang = KategoriBarangModel(nama: nama!);
+    await kategoriBarangController.deleteKategoriBarang(kategoriBarang);
   }
 
   @override
@@ -47,17 +48,23 @@ class _KategoriBarangState extends State<KategoriBarang> {
             child: ListTile(
               title: Text(listKategoriBarang[index].nama),
               trailing: Row(
-                children: [
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const UpdateKategoriBarang()));
+                    },
                     icon: const Icon(Icons.edit),
                   ),
                   IconButton(
-                    onPressed: () {
-                      //deleteKategoriBarang();
-                    },
-                    icon: const Icon(Icons.delete),
-                  )
+                      onPressed: () {
+                        deleteKategoriBarang();
+                      },
+                      icon: const Icon(Icons.delete))
                 ],
               ),
             ),
